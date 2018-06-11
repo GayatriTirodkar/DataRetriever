@@ -1,0 +1,13 @@
+tmp
+.bundle
+log/*
+*.log
+solr/*
+solr/pids
+solr/test
+solr/developmet
+solr/default/data
+
+# production
+build
+
