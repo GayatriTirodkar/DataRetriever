@@ -6,12 +6,10 @@ csv.each do |row|
   user = User.new
   user.first_name = row['first_name']
   user.last_name = row['last_name']
-  user.age = row['age']
   user.gender = row['gender']
   user.qualification = row['qualification']
   user.occupation = row['occupation']
   user.address = row['address']
-  user.mobile_number =  row['mobile_number']
   user.email_id = row['email_id']
   user.save!
 end
