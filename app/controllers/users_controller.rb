@@ -5,10 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     if params[:search]
-      @search = User.solr_search do
-        fulltext params[:search]
-      end
-      @users = @search.results
+	@users = User.search(params[:search])
     else
       @users = User.all
     end
@@ -76,6 +73,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :age, :gender, :qualification, :occupation, :address, :mobile_number, :email_id)
+      params.require(:user).permit(:first_name, :last_name, :gender, :qualification, :occupation, :address, :email_id)
     end
 end
