@@ -18,9 +18,13 @@ class User
   validates :first_name, :last_name, presence: true
   validates :gender, inclusion: {in: %w(Male Female), message: "Please specify valid input(Male / Female)"}
   validates :email_id, presence: true, uniqueness: true, email: true
- 
+
   def self.search(term)
-    User.any_of({first_name: /#{term}/i}, {last_name: /#{term}/i}, {gender: /#{term}/i}, {qualification: /#{term}/i}, {occupation: /#{term}/i}, {address: /#{term}/i}, {email_id: /#{term}/})
+    if ["Male", "male", "Female", "female"].include? term
+      User.where(gender: term.to_s.capitalize).all
+    else
+      User.any_of({first_name: /#{term}/i}, {last_name: /#{term}/i}, {qualification: /#{term}/i}, {occupation: /#{term}/i}, {address: /#{term}/i}, {email_id: /#{term}/})
+    end
   end
 
 end
