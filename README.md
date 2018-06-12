@@ -14,3 +14,5 @@ To get this application running follow the below steps:
 
   1. Execute rails server
   2. Open the browser and type 'http://localhost:3000/'
+
+The fully functional app is also deployed on https://dataretrieverapp.herokuapp.com/
