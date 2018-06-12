@@ -158,7 +158,4 @@ test:
 production:
     clients:
         default:
-            uri: ENV['PROD_MONGODB']
-        options:
-            skip_version_check: true
-        safe: true
+            uri: <%= ENV['PROD_MONGODB'] %>
