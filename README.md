@@ -1,6 +1,6 @@
 #Readme
 
-This is a very basic query engine application to execute real time queries on the user data.
+This is a very basic query engine application to execute real time queries on the user data. All the columns of the user table are searchable
 The app uses Ruby 2.4.1 and Rails 5.2.0
 
 
